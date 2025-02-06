@@ -35,3 +35,31 @@ body {
     width: 100%;
     bottom: 0;
 }
+.melding-blok {
+    background-color: #000;
+    border: 2px solid yellow;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px yellow;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.melding-blok p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: yellow;
+}
+
+.melding-blok strong {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.melding-blok .datum {
+    color: yellow;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+}
