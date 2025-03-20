@@ -6,6 +6,18 @@
     <title>info@LVC</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let whatsappBtn = document.getElementById("whatsapp-kentekens");
+        let kentekenLijst = document.querySelectorAll("ul li");
+
+        let kentekens = Array.from(kentekenLijst).map(item => item.textContent).join("\n");
+        let whatsappText = "🚔 *Meldingen Land van Cuijk* 🚔\n\n🚘 Kentekens:\n" + kentekens;
+        let whatsappUrl = "https://wa.me/?text=" + encodeURIComponent(whatsappText);
+
+        whatsappBtn.setAttribute("href", whatsappUrl);
+    });
+</script>
 <body>
     </div>
 
