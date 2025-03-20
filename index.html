@@ -33,6 +33,117 @@
     <p class="datum">📅 Datum: 6 februari 2025</p>
 </div>
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kentekenregister Cuijk & Omgeving</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        li strong:first-child {
+            color: #3498db;
+        }
+        
+        .kenteken-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        #whatsapp-kentekens {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.2s;
+        }
+        
+        #whatsapp-kentekens:hover {
+            transform: scale(1.05);
+        }
+        
+        .location-tag {
+            font-size: 0.8em;
+            color: #95a5a6;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>🚔 Kentekens: Cuijk & Omgeving 🚔</h2>
+    <ul>
+        <li><strong>Skoda</strong><span class="kenteken-badge">GNF-29-L</span></li>
+        <li><strong>BMW 1 Serie (Donkerblauw)</strong><span class="kenteken-badge">R-906-SV</span></li>
+        <li><strong>SEAT Leon (Zwart)</strong><span class="kenteken-badge">P-261-JJ</span></li>
+        <li><strong>Kia Ceed ST (Donkerblauw/Zwart)</strong><span class="kenteken-badge">R-359-NG</span></li>
+        <li><strong>Ford Station (Handhaving)</strong><span class="kenteken-badge">GFL-32-P</span></li>
+        <li><strong>SEAT Leon Sportstourer</strong><span class="kenteken-badge">N-598-FF</span><span class="location-tag">📍 Grave</span></li>
+        <li><strong>Kia Ceed Station</strong><span class="kenteken-badge">P-182-LG</span><span class="location-tag">📍 Mill/Uden</span></li>
+        <li><strong>Renault Megane</strong><span class="kenteken-badge">S-822-GV</span><span class="location-tag">📍 Cuijk</span></li>
+        <li><strong>Kia Ceed</strong><span class="kenteken-badge">X-378-SDF</span><span class="location-tag">📍 Gennep</span></li>
+        <li><strong>BMW 1 Serie (Grijs)</strong><span class="kenteken-badge">P-546-RL</span><span class="location-tag">📍 Cuijk</span></li>
+        <li><strong>Volkswagen Golf 8 (Zwart)</strong><span class="kenteken-badge">-</span><span class="location-tag">📍 Gennep</span></li>
+        <li><strong>BMW</strong><span class="kenteken-badge">P-070-RJ</span><span class="location-tag">📍 Cuijk</span></li>
+        <li><strong>Audi S3 (Zwart)</strong><span class="kenteken-badge">P-215-TL</span></li>
+        <li><strong>SEAT Leon FR</strong><span class="kenteken-badge">N-668-NX</span></li>
+        <li><strong>Kia Niro</strong><span class="kenteken-badge">N-490-FV</span></li>
+        <li><strong>Suzuki S-Cross</strong><span class="kenteken-badge">TK-880-B</span></li>
+    </ul>
+
+    <a id="whatsapp-kentekens" href="#" onclick="shareViaWhatsApp()">
+        📲 Deel deze lijst via WhatsApp
+    </a>
+
+    <script>
+        function shareViaWhatsApp() {
+            const kentekens = Array.from(document.querySelectorAll('li')).map(li => {
+                const vehicle = li.querySelector('strong').textContent;
+                const kenteken = li.querySelector('.kenteken-badge').textContent;
+                const location = li.querySelector('.location-tag') ? li.querySelector('.location-tag').textContent : '';
+                return `${vehicle} - ${kenteken} ${location}`;
+            }).join('%0A');
+
+            const message = `*Actuele Kentekens Cuijk & Omgeving* 🚔%0A%0A${kentekens}%0A%0ABijgewerkt: ${new Date().toLocaleDateString('nl-NL')}`;
+            
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
 
 
 
